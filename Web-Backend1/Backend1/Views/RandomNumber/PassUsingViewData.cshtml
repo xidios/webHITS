@@ -1,0 +1,39 @@
+﻿@*
+
+*@
+@{
+    <li>
+        Random Number1: <b>@ViewData["GeneratedNumber1"]</b>
+    </li>
+    <li>
+        Random Number2: <b>@ViewData["GeneratedNumber2"]</b>
+    </li>
+    <li>
+        Addition: @ViewData["GeneratedNumber1"] + @ViewData["GeneratedNumber2"] = <b>@ViewData["Addition"]</b>
+    </li>
+
+    <li>
+        Subtraction: @ViewData["GeneratedNumber1"] - @ViewData["GeneratedNumber2"] = <b>@ViewData["Subtraction"]</b>
+    </li>
+
+    <li>
+        Multiplication: @ViewData["GeneratedNumber1"] * @ViewData["GeneratedNumber2"] =<b> @ViewData["Multiplication"]</b>
+    </li>
+
+
+    <li>
+        Division: @ViewData["GeneratedNumber1"] / @ViewData["GeneratedNumber2"] =
+        <b>
+            @if (ViewData["Error"] == null)
+            {
+                @ViewData["Division"]
+            }
+            else
+            {
+
+                @ViewData["Error"]
+
+            }
+        </b>
+    </li>
+}

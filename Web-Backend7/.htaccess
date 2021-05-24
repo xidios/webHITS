@@ -1,0 +1,4 @@
+php_flag output_buffering on
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ api.php?q=$1 [L,QSA]

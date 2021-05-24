@@ -1,0 +1,14 @@
+﻿@model Backend2.Models.GreetingViewModel
+@{
+    ViewBag.Title = "Hello Forms";
+}
+
+<h2>What is your name?</h2>
+
+<form asp-action="ModelBindingInSeparateModel">
+    <div class="form-group">
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

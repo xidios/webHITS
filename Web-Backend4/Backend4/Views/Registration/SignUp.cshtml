@@ -1,0 +1,67 @@
+﻿@model Backend4.Models.RegisterUserModel
+@{
+    ViewBag.Title = "Sign up";
+}
+
+<h2>Sign up</h2>
+
+<form asp-action="SignUp" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-md-2 control-label">First name</label>
+        <div class="col-md-10">
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Last name</label>
+        <div class="col-md-10">
+            <input asp-for="SecondName" class="form-control" />
+            <span asp-validation-for="SecondName"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Birthday</label>
+        <div class="col-md-10 form-inline">
+            <select asp-for="Day" class="form-control">
+                <option disabled="disabled">Day</option>
+                @for (int i = 1; i < 31; i++)
+                {
+                    <option>@i</option>
+                }
+            </select>
+            <select asp-for="Month" class="form-control">
+                <option disabled="disabled">Month</option>
+                @foreach (var month in ViewBag.AllMonths)
+                {
+                    <option>@month.Name</option>
+                }
+            </select>
+            <select asp-for="Year" class="form-control">
+                <option disabled="disabled">Year</option>
+                @for (int i = 1990; i < 2010; i++)
+                {
+                    <option>@i</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Gender</label>
+        <div class="col-md-10">
+            <div class="radio">
+                <input asp-for="Gender" type="radio" value="Male" />Male
+            </div>
+            <div class="radio">
+                <input asp-for="Gender" type="radio" value="Female" />Female
+            </div>
+            <span asp-validation-for="Gender"></span>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+            <button class="btn btn-primary">Sign up</button>
+        </div>
+    </div>
+</form>

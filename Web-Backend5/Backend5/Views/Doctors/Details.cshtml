@@ -1,0 +1,31 @@
+﻿@model Backend5.Models.Doctor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Doctor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Specialty)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Specialty)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index" asp-controller="DoctorPatients" asp-route-doctorId="@Model.Id">Patients</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

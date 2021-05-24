@@ -1,0 +1,34 @@
+﻿@model Backend5.Models.DoctorPatient
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DoctorPatient</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Doctor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Doctor.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Patient.Name)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete" asp-route-doctorId="@Model.DoctorId" asp-route-patientId="@Model.PatientId">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index" asp-route-doctorId="@Model.DoctorId">Back to List</a>
+        </div>
+    </form>
+</div>

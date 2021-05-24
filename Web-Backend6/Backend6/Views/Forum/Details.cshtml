@@ -1,0 +1,42 @@
+﻿@using Backend6.Services
+@model Forum
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>@Model.Name</h2>
+<p>@Model.Description</p>
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        <a asp-action="Create" asp-controller="ForumTopics" asp-route-forumId="@Model.Id">Create new topic</a>
+    </p>
+}
+<div class="panel panel-default">
+    <table class="table table-striped">
+        <tbody>
+            @foreach (var item in Model.ForumTopics.OrderByDescending(x => x.Created))
+            {
+                <tr>
+                    <td>
+                        <a asp-action="Details" asp-controller="ForumTopics" asp-route-id="@item.Id" style="font-size: 1.3em">@item.Name</a><br />
+                        @item.Creator.UserName , @item.Created
+                    </td>
+                    <td style="width: 100px">
+                        @item.ForumMessages.Count
+                    </td>
+                    <td style="width: 220px">
+                        @if (item.ForumMessages.Count > 0)
+                        {
+                            @item.ForumMessages.Last().Creator<br />
+                            @item.ForumMessages.Last().Created
+                        }
+                    </td>
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>
+

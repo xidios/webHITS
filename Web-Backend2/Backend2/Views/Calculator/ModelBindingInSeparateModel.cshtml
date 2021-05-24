@@ -1,0 +1,33 @@
+﻿@model Backend2.Models.CalculatorViewModel
+@{
+    ViewBag.Title = "Calculator";
+}
+
+<h2>Calculator</h2>
+
+<form asp-action="ModelBindingInSeparateModel">
+    <div class="row">
+        <div class="form-group col-md-2">
+            <input asp-for="Number1" class="form-control" />
+            <span asp-validation-for="Number1"></span>
+
+        </div>
+        <div class="form-group col-md-1">
+            <select asp-for="Operation" class="form-control">
+                <option selected>+</option>
+                <option>-</option>
+                <option>*</option>
+                <option>/</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <input asp-for="Number2" class="form-control" />
+            <span asp-validation-for="Number2"></span>
+        </div>
+        <button type="submit" class="btn btn-primary col-md-1">Calculate</button>
+        @if (Model.Result != null)
+        {
+            <p>= @Model.Result</p>
+        }
+    </div>
+</form>

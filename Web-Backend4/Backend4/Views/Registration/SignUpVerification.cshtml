@@ -1,0 +1,45 @@
+﻿@model Backend4.Models.RegisterUserModel
+@{
+    ViewBag.Title = "Sign up";
+}
+
+<h2>Sign up</h2>
+<p>User with same profile data already exists. Are you sure you want to sign up?</p>
+
+<form class="form-horizontal" asp-action="SignUpVerification">
+    <input asp-for="FirstName" type="hidden" />
+    <input asp-for="SecondName" type="hidden" />
+    <input asp-for="Day" type="hidden" />
+    <input asp-for="Month" type="hidden" />
+    <input asp-for="Year" type="hidden" />
+    <input asp-for="Gender" type="hidden" />
+    <div class="form-group">
+        <label class="col-md-2 control-label">First name</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.FirstName</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Second name</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.SecondName</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Birthday</label>
+        <div class="col-md-10 form-inline">
+            <p class="form-control-static">@Model.Month @Model.Day, @Model.Year</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Gender</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.Gender</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+            <button class="btn btn-primary">Sign up anyway</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,24 @@
+﻿@model Backend4.Models.RegisterUserMailModel
+@{
+    ViewBag.Title = "Sign up";
+}
+
+<h2>Sign up result</h2>
+<dl class="dl-horizontal">
+    <dt>First name</dt>
+    <dd>@Model.FirstName</dd>
+    <dt>Last name</dt>
+    <dd>@Model.SecondName</dd>
+    <dt>Birthday</dt>
+    <dd>@Model.Month @Model.Day, @Model.Year</dd>
+    <dt>Gender</dt>
+    <dd>@Model.Gender</dd>
+    <dt>Email</dt>
+    <dd>@Model.Email</dd>
+    <dt>Password</dt>
+    <dd>@Model.Password</dd>
+    <dt>User existed</dt>
+    <dd>@Model.Exists</dd>
+    <dt>Remembered</dt>
+    <dd>@Model.Remember</dd>
+</dl>

@@ -1,0 +1,22 @@
+﻿@model Backend4.Models.Controls.TextAreaViewModel
+@{
+    ViewBag.Title = "Text Area";
+}
+
+<h2>Text Area</h2>
+
+<form asp-action="TextArea" class="form-horizontal">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <label asp-for="Text" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <textarea asp-for="Text" rows="5" class="form-control"></textarea>
+            <span asp-validation-for="Text"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+            <button class="btn btn-default">Submit</button>
+        </div>
+    </div>
+</form>

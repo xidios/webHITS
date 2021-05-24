@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Backend6.Models.ForumCategory>
+
+@{
+    ViewData["Title"] = "Index";
+    char slash = '|';
+}
+
+<h2>Forums</h2>
+@if (User.IsInRole(ApplicationRoles.Administrators))
+{
+    <p>
+        <a asp-action="Create" class="btn btn-default">Create New Forum Category</a>
+    </p>
+}
+
+@foreach (var item in Model)
+{
+
+    <div class="panel panel-default forum-category">
+        <div class="panel-heading">
+            <strong>@Html.DisplayFor(modelItem => item.Name)</strong>
+            @if (User.IsInRole(ApplicationRoles.Administrators))
+            {
+                @(slash) <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                @(slash) <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                @(slash) <a asp-action="Create" asp-controller="Forum" asp-route-forumCategoryId="@item.Id">Create forum</a>
+            }
+        </div>
+        <table class="table table-striped">
+            <tbody>
+
+                @foreach (var i in item.Forums)
+                {
+
+                    <tr>
+                        <td>
+                            <a asp-action="Details" asp-controller="Forum" asp-route-forumId="@i.Id" class="forum-name">@i.Name</a>
+                            @if (User.IsInRole(ApplicationRoles.Administrators))
+                            {
+                                @(slash) <a asp-action="Edit" asp-controller="Forum" asp-route-Id="@i.Id">Edit</a>
+                                @(slash) <a asp-action="Delete" asp-controller="Forum" asp-route-forumId="@i.Id">Delete</a>
+                            }
+                            <p>@i.Description</p>
+                        </td>
+                        <td style="width: 150px">@i.ForumTopics.Count topics</td>
+                    </tr>
+
+
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+}
+

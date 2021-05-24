@@ -1,0 +1,36 @@
+﻿@model Backend5.Models.Placement
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Placement</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Bed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Bed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Patient.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ward)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ward.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

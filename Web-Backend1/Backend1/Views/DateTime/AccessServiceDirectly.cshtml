@@ -1,0 +1,12 @@
+﻿@using Backend1.Services
+@model dynamic
+@inject IDateTimeService DateTimeService
+@{
+    ViewBag.Title = "Access service directly";
+}
+
+<h2>Current Date & Time</h2>
+<dl class="dl-horizontal">
+    <dt>IDateTimeService.Now</dt>
+    <dd>@DateTimeService.Now</dd>
+</dl>

@@ -1,0 +1,28 @@
+﻿@model Backend3.Models.QuizViewModel
+@{
+    ViewBag.Title = "Hello Quiz";
+    var right = Model.ListOfResults.Count(x => x.Equal == true);
+}
+
+<h2>Quiz results</h2>
+<h3><b>Correct answers:</b> @Model.ListOfResults.Count / @right</h3>
+
+<p>
+    <ol>
+        @if (Model.ListOfResults != null)
+        {
+            foreach (var action in Model.ListOfResults)
+            {
+                if (action.Equal)
+                {
+                    <li>@action.Number1 @action.Operation @action.Number2 = @action.Answer</li>
+                }
+                else
+                {
+                    <li class="text-danger">@action.Number1 @action.Operation @action.Number2 = @action.Answer</li>
+                }
+
+            }
+        }
+    </ol>
+</p>

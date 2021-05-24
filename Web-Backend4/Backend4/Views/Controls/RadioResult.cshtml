@@ -1,0 +1,20 @@
+﻿@using Backend4.Models.Controls
+@model Backend4.Models.Controls.RadioViewModel
+@{
+    ViewBag.Title = "Radio";
+    var allMonths = ViewBag.AllMonths as Month[];
+    var montsMap = allMonths.ToDictionary(x => x.Id);
+}
+
+<h2>Radio</h2>
+<dl class="dl-horizontal">
+    <dt>Month</dt>
+    @if (Model.Month.HasValue)
+    {
+        <dd>@montsMap[Model.Month.Value].Name</dd>
+    }
+    else
+    {
+        <dd>(none)</dd>
+    }
+</dl>

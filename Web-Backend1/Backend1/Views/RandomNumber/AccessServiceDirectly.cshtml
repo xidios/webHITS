@@ -1,0 +1,42 @@
+﻿@inject Backend1.Services.ICalculationSevice CalculationService
+@inject Backend1.Services.IRandomNumberService RandomNumberService
+@{
+
+    int r1 = RandomNumberService.GenerateNumber();
+    int r2 = RandomNumberService.GenerateNumber();
+
+    <li>
+        Random Number1: <b>@r1</b>
+    </li>
+    <li>
+        Random Number2: <b>@r2</b>
+    </li>
+    <li>
+        Addition: @r1 + @r2 = <b>@CalculationService.Addition(r1, r2)</b>
+    </li>
+
+    <li>
+        Subtraction: @r1 - @r2 = <b>@CalculationService.Subtraction(r1, r2)</b>
+    </li>
+
+    <li>
+        Multiplication: @r1 * @r2 =<b> @CalculationService.Multiplication(r1, r2)</b>
+    </li>
+
+
+    <li>
+        Division: @r1 / @r2 =
+        <b>
+           @if (r2 != 0)
+           {
+               @CalculationService.Division(r1, r2)
+           }
+           else
+           {
+               string s = "Деление на ноль";
+               @s
+           }
+
+        </b>
+    </li>
+}

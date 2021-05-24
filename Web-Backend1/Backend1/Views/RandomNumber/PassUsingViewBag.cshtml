@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <li>
+        Random Number1: <b>@ViewBag.GeneratedNumber1</b>
+    </li>
+    <li>
+        Random Number2: <b>@ViewBag.GeneratedNumber2</b>
+    </li>
+    <li>
+        Addition: @ViewBag.GeneratedNumber1 + @ViewBag.GeneratedNumber2 = <b>@ViewBag.Addition</b>
+    </li>
+
+    <li>
+        Subtraction: @ViewBag.GeneratedNumber1 - @ViewBag.GeneratedNumber2 = <b>@ViewBag.Subtraction</b>
+    </li>
+
+    <li>
+        Multiplication: @ViewBag.GeneratedNumber1 * @ViewBag.GeneratedNumber2 =<b> @ViewBag.Multiplication</b>
+    </li>
+
+
+    <li>
+        Division: @ViewBag.GeneratedNumber1 / @ViewBag.GeneratedNumber2 =
+        <b>
+            @if (ViewBag.Error==null)
+            {
+                @ViewBag.Division
+            }
+            else
+            {
+
+                @ViewBag.Error
+
+            }
+        </b>
+    </li>
+}

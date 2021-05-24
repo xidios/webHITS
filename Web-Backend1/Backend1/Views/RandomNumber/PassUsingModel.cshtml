@@ -1,0 +1,38 @@
+﻿@model Backend1.Models.CalculatingRadnomNumbersModel
+@inject Backend1.Services.IRandomNumberService RandomNumberService
+
+@{
+
+}
+<li>
+    Random Number1: <b>@Model.GeneratedNumber1</b>
+</li>
+<li>
+    Random Number2: <b>@Model.GeneratedNumber2</b>
+</li>
+<li>
+    Addition: @Model.GeneratedNumber1 + @Model.GeneratedNumber2 = <b>@Model.Addition</b>
+</li>
+
+<li>
+    Subtraction: @Model.GeneratedNumber1 - @Model.GeneratedNumber2 = <b>@Model.Subtraction</b>
+</li>
+
+<li>
+    Multiplication: @Model.GeneratedNumber1 * @Model.GeneratedNumber2 =<b> @Model.Multiplication</b>
+</li>
+
+
+<li>
+    Division: @Model.GeneratedNumber1 / @Model.GeneratedNumber2 =
+    <b>
+        @if (ViewData.ModelState.IsValid)
+        {
+            @Model.Division
+        }
+        else
+        {
+            @Html.ValidationMessage(nameof(Model.Division))
+        }
+    </b>
+</li>

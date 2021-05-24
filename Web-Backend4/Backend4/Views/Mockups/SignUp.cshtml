@@ -1,0 +1,66 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "Sign up";
+}
+
+<h2>Sign up</h2>
+
+<form class="form-horizontal">
+    <div class="form-group">
+        <label class="col-md-2 control-label">First name</label>
+        <div class="col-md-10">
+            <input type="text" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Last name</label>
+        <div class="col-md-10">
+            <input type="text" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Birthday</label>
+        <div class="col-md-10 form-inline">
+            <select class="form-control">
+                <option disabled="disabled">Day</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+            <select class="form-control">
+                <option disabled="disabled">Month</option>
+                <option>January</option>
+                <option>February</option>
+                <option>March</option>
+            </select>
+            <select class="form-control">
+                <option disabled="disabled">Year</option>
+                <option>2000</option>
+                <option>1999</option>
+                <option>1998</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Gender</label>
+        <div class="col-md-10">
+            <div class="radio">
+                <label>
+                    <input name="Gender" type="radio" />
+                    Male
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input name="Gender" type="radio" />
+                    Female
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+            <button class="btn btn-primary">Sign up</button>
+        </div>
+    </div>
+</form>

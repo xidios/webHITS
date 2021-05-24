@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <UserSecretsId>aspnet-Backend6-4fd1b34e-3551-4869-9119-f7b6184396dc</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20210326093651_AddForumTopics3.cs" />
+    <Compile Remove="Data\Migrations\20210326093651_AddForumTopics3.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210326094904_AddForumTopicsFix.cs" />
+    <Compile Remove="Data\Migrations\20210326094904_AddForumTopicsFix.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210326111737_AddForumMessage.cs" />
+    <Compile Remove="Data\Migrations\20210326111737_AddForumMessage.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210326111947_AddForumMessage.cs" />
+    <Compile Remove="Data\Migrations\20210326111947_AddForumMessage.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210326112142_AddForumMessage.cs" />
+    <Compile Remove="Data\Migrations\20210326112142_AddForumMessage.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210326112608_AddForumMessage.cs" />
+    <Compile Remove="Data\Migrations\20210326112608_AddForumMessage.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.3" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.0.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.0.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+
+</Project>

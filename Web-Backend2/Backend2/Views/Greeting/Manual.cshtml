@@ -1,0 +1,21 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "Hello Forms";
+}
+
+<h2>What is your name?</h2>
+
+<form asp-action="Manual">
+    <div class="form-group">
+        @if (ViewBag.Error == null)
+        {
+            <input type="text" name="Name" class="form-control" />
+        }
+        else
+        {
+            <input type="text" name="Name" class="form-control input-validation-error" />
+            <span class="field-validation-error">@ViewBag.Error</span>
+        }
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

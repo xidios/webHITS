@@ -1,0 +1,51 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "Calculator";
+}
+
+<h2>Calculator</h2>
+
+<form asp-action="ModelBindingInParameters">
+    <div class="row">
+        <div class="form-group col-md-2">
+            @if (ViewBag.Number1Null == null)
+            {
+                <input type="number" name="Snumber1" class="form-control" />
+            }
+            else
+            {
+                <input type="number" name="Snumber1" class="form-control input-validation-error" />
+                <span class="field-validation-error">@ViewBag.Number1Null</span>
+            }
+        </div>
+        <div class="form-group col-md-1">
+            <select type="text" name="Operation" class="form-control">
+                <option selected>+</option>
+                <option>-</option>
+                <option>*</option>
+                <option>/</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            @if (ViewBag.DividedByZero == null && ViewBag.Number2Null == null)
+            {
+                <input type="number" name="Snumber2" class="form-control" />
+            }
+            else if (ViewBag.DividedByZero != null)
+            {
+                <input type="text" name="Snumber2" class="form-control input-validation-error" />
+                <span class="field-validation-error">@ViewBag.DividedByZero</span>
+            }
+            else
+            {
+                <input type="text" name="Snumber2" class="form-control input-validation-error" />
+                <span class="field-validation-error">@ViewBag.Number2Null</span>
+            }
+        </div>
+        <button type="submit" class="btn btn-primary col-md-1">Calculate</button>
+        @if (Model != null)
+        {
+            <p>= @Model.Result</p>
+        }
+    </div>
+</form>

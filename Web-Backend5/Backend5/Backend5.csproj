@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <UserSecretsId>aspnet-Backend5-78343F1B-F4FB-49BE-BA9F-2F0B39FFFC93</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Migrations\20210318182753_GodPleaseHelpMe.cs" />
+    <Compile Remove="Migrations\20210318182753_GodPleaseHelpMe.Designer.cs" />
+    <Compile Remove="Migrations\20210319122703_AddWardStaff.cs" />
+    <Compile Remove="Migrations\20210319122703_AddWardStaff.Designer.cs" />
+    <Compile Remove="Migrations\20210320115900_AddPlacement.cs" />
+    <Compile Remove="Migrations\20210320115900_AddPlacement.Designer.cs" />
+    <Compile Remove="Migrations\20210320120026_AddPlacement_2.cs" />
+    <Compile Remove="Migrations\20210320120026_AddPlacement_2.Designer.cs" />
+    <Compile Remove="Migrations\20210320120157_AddPlacement_3.cs" />
+    <Compile Remove="Migrations\20210320120157_AddPlacement_3.Designer.cs" />
+    <Compile Remove="Migrations\20210320134220_AddPatient_02.cs" />
+    <Compile Remove="Migrations\20210320134220_AddPatient_02.Designer.cs" />
+    <Compile Remove="Migrations\20210320134401_AddPatient2.cs" />
+    <Compile Remove="Migrations\20210320134401_AddPatient2.Designer.cs" />
+    <Compile Remove="Migrations\20210320135050_AddPatient2.cs" />
+    <Compile Remove="Migrations\20210320135050_AddPatient2.Designer.cs" />
+    <Compile Remove="Migrations\20210320175354_AddAnalyses.cs" />
+    <Compile Remove="Migrations\20210320175354_AddAnalyses.Designer.cs" />
+    <Compile Remove="Migrations\20210320182703_AddAnalyses.cs" />
+    <Compile Remove="Migrations\20210320182703_AddAnalyses.Designer.cs" />
+  </ItemGroup>
+
+    <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.3" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.0.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.0.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+
+</Project>

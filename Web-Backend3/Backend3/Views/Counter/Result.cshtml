@@ -1,0 +1,16 @@
+﻿@model Backend3.Models.CounterViewModel
+@{
+    ViewBag.Title = "Hello Counter";
+}
+
+<h2>Counter</h2>
+
+<p><strong>Result:</strong> @Model.CurrentCount</p>
+<p>
+    <ol>
+       @foreach (var action in Model.Actions)
+       {
+           <li>@action</li>
+       }
+    </ol>
+</p>

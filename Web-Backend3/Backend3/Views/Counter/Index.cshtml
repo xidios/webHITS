@@ -1,0 +1,29 @@
+﻿@model Backend3.Models.CounterViewModel
+@{
+    ViewBag.Title = "Hello Counter";
+}
+
+<h2>Counter</h2>
+
+<form asp-action="Index" class="form-horizontal">
+    <div asp-validation-summary="All"></div>
+    <input type="hidden" asp-for="CurrentCount"/>
+    @if (Model.Actions != null)
+    {
+        for (var i = 0; i < Model.Actions.Count; i++)
+        {
+            <input type="hidden" asp-for="@Model.Actions[i]"/>
+        }
+    }
+    <div class="form-group">
+        <span class="col-md-2"><strong>Current value:</strong></span>
+        <span class="col-md-10">@Model.CurrentCount</span>
+    </div>
+    <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+            <button type="submit" name="Action" class="btn btn-default" value="Decrease">Decrease</button>
+            <button type="submit" name="Action" class="btn btn-default" value="Increase">Increase</button>
+            <button type="submit" name="Action" class="btn btn-primary" value="Finish">Finish</button>
+        </div>
+    </div>
+</form>

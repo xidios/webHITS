@@ -1,0 +1,33 @@
+@model IEnumerable<Backend5.Models.HospitalLab>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Labs of @ViewBag.Hospital.Name</h2>
+
+<p>
+    <a asp-action="Create" asp-route-hospitalId="@ViewBag.Hospital.Id">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Lab)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lab.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { hospitalId = item.HospitalId, labId = item.LabId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

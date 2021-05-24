@@ -1,0 +1,68 @@
+﻿@using Backend6.Services
+@model Backend6.Models.ForumTopic
+@inject IUserPermissionsService UserPermissions
+@{
+    ViewData["Title"] = "Details";
+    var canEditTopic = UserPermissions.CanEditForumTopic(@Model);
+}
+
+<h2>@Model.Name</h2>
+<p>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a asp-action="Create" asp-controller="ForumMessages" asp-route-forumTopicId="@Model.Id">Reply</a>@(" | ")
+    }
+    @if (canEditTopic)
+    {
+        <a asp-action="Edit" asp-route-forumTopicsId="@Model.Id">Edit</a>
+        @(" | ")<a asp-action="Delete" asp-route-id="@Model.Id">Delete</a>@(" | ")
+
+    }
+    <a asp-action="Details" asp-controller="Forum" asp-route-forumId="@Model.ForumId">Back to  @Html.DisplayFor(model => model.Forum.Name)</a>
+</p>
+@foreach (var item in Model.ForumMessages.OrderByDescending(x => x.Created))
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div>
+                @item.Creator.Email, @item.Created @("(") @(" edited ") @item.Modified; @(")")
+                @if (User.Identity.IsAuthenticated)
+                {
+                    var CanEditMessege = UserPermissions.CanEditForumMessege(item);
+                    @("|") <a asp-action="Edit" asp-controller="ForumMessages" asp-route-id="@item.Id">Edit</a>
+                    @if (CanEditMessege)
+                    {
+                        @("|") <a asp-action="Delete" asp-controller="ForumMessages" asp-route-id="@item.Id"> Delete </a>
+                        @("|") <a asp-action="Create" asp-controller="ForumMessageAttachments" asp-route-forumMessageId="@item.Id"> Attach </a>
+                    }
+                }
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="forum-message-text">
+                @item.Text
+
+            </div>
+
+            @foreach (var i in item.ForumMessageAttachments.OrderByDescending(x => x.Created))
+            {
+                var canEditMessage = UserPermissions.CanEditForumMessege(item);
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="@i.FilePath" alt="Image" />
+                        @if (canEditMessage)
+                        {
+                            <div class="caption">
+                                <p><a asp-action="Delete" asp-controller="ForumMessageAttachments" asp-route-id="@i.Id" class="btn btn-danger">Delete</a></p>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+
+}

@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "RandomNumber Service Demonstration";
+    ViewData["Title1"] = "Calculate";
+
+}
+<h2>@ViewBag.Title</h2>
+<h3>@ViewData["Title1"]</h3>
+<ul>
+    <li><a asp-controller="RandomNumber" asp-action="PassUsingModel">Model: Calculation with Random number between -1000 and 1000</a></li>
+    <li><a asp-controller="RandomNumber" asp-action="PassUsingViewBag">ViewBag: Calculation with Random number between -1000 and 1000</a></li>
+    <li><a asp-controller="RandomNumber" asp-action="PassUsingViewData">ViewData: Calculation with Random number between -1000 and 1000</a></li>
+    <li><a asp-controller="RandomNumber" asp-action="AccessServiceDirectly">Directly: Calculation with Random number between -1000 and 1000</a></li>
+    
+</ul>
